@@ -2,13 +2,21 @@
 #
 # Table name: cat_rental_requests
 #
-#  id           :bigint           not null, primary key
-#  cat_id       :bigint           not null
-#  start_date   :date             not null
-#  end_date     :date             not null
-#  status       :string           default("PENDING"), not null
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
+#  id         :bigint           not null, primary key
+#  end_date   :date             not null
+#  start_date :date             not null
+#  status     :string           default("PENDING"), not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  cat_id     :bigint           not null
+#
+# Indexes
+#
+#  index_cat_rental_requests_on_cat_id  (cat_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (cat_id => cats.id)
 #
 class CatRentalRequest < ApplicationRecord
   # .freeze renders constants immutable
