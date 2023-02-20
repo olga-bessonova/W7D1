@@ -1,0 +1,12 @@
+<% if action == :new  %>
+<% action_url = users_url %>
+<% button_text = "Create User"%>
+<% end %>
+
+<div class="item">
+    <form action="<%= action_url %>" method="POST">
+</div>
+
+<label>
+    Username:
+    <input type="text">
